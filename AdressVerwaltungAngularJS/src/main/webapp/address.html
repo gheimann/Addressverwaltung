@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+
+<div>
+	<body data-ng-app="address">
+		<script src="addressApp.js"></script>
+		<script src="addressController.js"></script>
+
+		<div ng-controller="AddressController">
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Anrede</th>
+						<th>Nachname</th>
+						<th>Vorname</th>
+						<th>Email</th>
+						<th>Bearbeiten</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="addresses in address3">
+						<td>{{ addresses.anrede }}</td>
+						<td>{{ addresses.nachname }}</td>
+						<td>{{ addresses.vorname }}</td>
+						<td>{{ addresses.email }}</td>
+						<td>
+							<button class="btn" ng-click="bearbeitenAddress(address.id)">
+								<span class="glyphicon glyphicon-pencil"></span>Bearbeiten
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<hr>
+			<button class="btn btn-success" ng-click="bearbeitenAddress('new')">
+				<span class="glyphicon glyphicon-user"></span> Neue Adresse
+			</button>
+			<hr>
+
+			<h3 ng-show="edit">Neue Adresse anlegen:</h3>
+			<h3 ng-hide="edit">Adresse bearbeiten:</h3>
+
+			<form action="">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Anrede:</label> 
+					<input type="text" ng-model="address.anrede" ng-disabled="!edit"
+						placeholder="Hier die Anrede eingeben" />
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Vorname:</label> 
+					<input type="text" ng-model="address.vorname" ng-disabled="!edit" 
+						placeholder="Hier den Vorname eingeben" />
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Nachname:</label> 
+					<input type="text" ng-model="address.nachname" ng-disabled="!edit"
+						placeholder="Hier den Nachnamen eingeben" />
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Email:</label> 
+					<input type="text" ng-model="address.email" ng-disabled="!edit"
+						placeholder="Hier die Email-Adress eingeben" /><br>
+				</div>
+			</form>
+
+			<hr>
+
+
+			<h2>Testausgaben:</h2>
+			<h3>Anrede: {{address.anrede}}</h3>
+			<h3>Vorname: {{address.vorname}}</h3>
+			<h3>Nachname: {{address.nachname}}</h3>
+			<h3>Email: {{address.email}}</h3>
+			<h3>FullName: {{name()}}</h3>
+
+			<h3>Adressen: {{address2}}</h3>
+
+
+		</div>
+</div>
+
+</body>
+</html>
