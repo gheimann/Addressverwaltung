@@ -10,7 +10,7 @@ app.controller("AddressController", function($scope, $http) {
 	    	}
 	    	else {
 	    		$scope.edit = false;
-	    		$http.get('/AdressVerwaltung/rest/address/element/1').
+	    		$http.get('/AdressVerwaltungAngularJS/rest/address/element/1').
 	      	  success(function(data)
 	      		{ 
 	      		  $scope.address = {};
@@ -28,7 +28,7 @@ app.controller("AddressController", function($scope, $http) {
 	    }
 	    
 	    
-    	$http.get('/AdressVerwaltung/rest/address/element/1').
+    	$http.get('/AdressVerwaltungAngularJS/rest/address/element/1').
     	  success(function(data)
     		{ 
     		  $scope.address = {};
@@ -42,7 +42,7 @@ app.controller("AddressController", function($scope, $http) {
     		  }
     			  })
     			  
-         $http.get('/AdressVerwaltung/rest/address/list').
+         $http.get('/AdressVerwaltungAngularJS/rest/address/list').
     	  success(function(data)
     		{ 
     		  $scope.address2 = {};

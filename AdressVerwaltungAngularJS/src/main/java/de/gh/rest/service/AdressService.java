@@ -32,6 +32,7 @@ public class AdressService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public ArrayList<Address> getAddressListe()
 	{
+		System.err.println("in list");
 		Address address = new Address(Anreden.Frau, "Gabi", "Testfrau", "gh@test.de");
 		address.setId(1);
 		Address address2 = new Address(Anreden.Herr, "Jürgen", "Langguth", "jl@test.de");
