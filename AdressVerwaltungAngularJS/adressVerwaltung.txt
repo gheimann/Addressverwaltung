@@ -1,2 +1,2 @@
-http://localhost:8080/AdressVerwaltung/adress.html wird das adress.html und app.js als Controller aufgerufen.
-Die Daten werden vom restService gelesen und angezeigt.
+Aufruf: 
+http://localhost:8080/AdressVerwaltungAngularJS/#/address

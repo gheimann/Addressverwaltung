@@ -1,5 +1,0 @@
-Wenn der Server gestartet ist kann mit http://localhost:8080/AdressVerwaltung/rest/json/serverinfo der RestService aufgerufen
-werden und die Ausgabe erfolgt.
-
-der Aufruf http://localhost:8080/AdressVerwaltung/model.html ruft ebenfalls den RestService s.o. auf, jedoch aus 
-einem angularJs Controller.

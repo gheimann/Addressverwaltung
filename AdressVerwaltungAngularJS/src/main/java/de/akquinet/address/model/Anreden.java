@@ -1,5 +1,5 @@
 
-package de.gh.example.model;
+package de.akquinet.address.model;
 
 
 

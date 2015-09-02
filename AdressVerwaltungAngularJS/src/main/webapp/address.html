@@ -10,8 +10,7 @@
 
 <div>
 	<body data-ng-app="address">
-		<script src="addressApp.js"></script>
-		<script src="addressController.js"></script>
+		
 
 		<div ng-controller="AddressController">
 
@@ -27,12 +26,13 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="addresses in address3">
+						<td>{{ addresses.id }}</td>
 						<td>{{ addresses.anrede }}</td>
 						<td>{{ addresses.nachname }}</td>
 						<td>{{ addresses.vorname }}</td>
 						<td>{{ addresses.email }}</td>
 						<td>
-							<button class="btn" ng-click="bearbeitenAddress(address.id)">
+							<button class="btn" ng-click="bearbeitenAddress(addresses.id);">
 								<span class="glyphicon glyphicon-pencil"></span>Bearbeiten
 							</button>
 						</td>
@@ -70,23 +70,17 @@
 					<input type="text" ng-model="address.email" ng-disabled="!edit"
 						placeholder="Hier die Email-Adress eingeben" /><br>
 				</div>
+				<button class="btn btn-success" ng-click="speichereAddress(address)">
+				<span class="glyphicon glyphicon-user"></span> Adresse speichern
+			</button>
 			</form>
 
 			<hr>
 
 
-			<h2>Testausgaben:</h2>
-			<h3>Anrede: {{address.anrede}}</h3>
-			<h3>Vorname: {{address.vorname}}</h3>
-			<h3>Nachname: {{address.nachname}}</h3>
-			<h3>Email: {{address.email}}</h3>
-			<h3>FullName: {{name()}}</h3>
-
-			<h3>Adressen: {{address2}}</h3>
-
-
 		</div>
 </div>
-
+  <script src="js/addressApp.js"></script>
+  <script src="js/controllers/addressController.js"></script>
 </body>
 </html>
