@@ -1,10 +1,7 @@
-addressApp.controller("AddressListCtrl", function($scope, $http) {
+addressApp.controller("AddressListCtrl", function($scope, $http, AddressDataService) {
 	    
-         $http.get('/AdressVerwaltungAngularJS/rest/address/list').
-    	  success(function(data)
-    		{ 
-    		  $scope.address2 = {};
-    		  $scope.address2 = JSON.stringify(data)    		  
-    		  $scope.address = data    		  
-    			  })
+         AddressDataService.getAddress().then(function(res) {
+        	 $scope.address = res.data;   
+		});
+         
     });
