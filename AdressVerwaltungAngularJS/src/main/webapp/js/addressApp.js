@@ -10,6 +10,14 @@ addressApp.config(function($routeProvider) {
 		templateUrl: 'templates/address_detail.html', 
 		controller : 'AddressDetailCtrl'
 	})
+	.when('/admin/address/new', {
+		templateUrl: 'templates/address_form.html', 
+		controller : 'AddressNewCtrl'
+	})
+	.when('/address/:addressID/edit', {
+		templateUrl: 'templates/address_form.html', 
+		controller : 'AddressEditCtrl'
+	})
 	.otherwise({
 		redirectTo: 'address'
 	});
